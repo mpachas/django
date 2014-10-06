@@ -136,6 +136,8 @@ def translation(language):
                 return None
 
         res = _translation(globalpath)
+        if res is None: 
+            return gettext_module.NullTranslations() 
 
         # We want to ensure that, for example,  "en-gb" and "en-us" don't share
         # the same translation object (thus, merging en-us with a local update
